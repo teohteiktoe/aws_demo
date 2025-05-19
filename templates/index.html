@@ -1,9 +1,10 @@
 <html>
-        <h1>Text Sentiment Analysis</h1>
-        <form action="/" method="post">
-            <p>Please enter your text: </p>
-            <p><input type="text" name="q"></p>
-            <p><input type="submit" value="Enter"></p>
-        </form>
-        {{r}}
+    <h1>This is my first ML cloud model : DBS Share Price prediction</h1>
+    <form action="/" method="post">
+        <p>Please enter the USD to SGD rate (eg 1.3)</p>
+        <p><input type="number" step="0.01" name="rate"></p>
+        <p><input type="submit" value="Enter"></p>
+    </form>
+    <p>The predicted DBS share price is {{result}}</p>
 </html>
+
