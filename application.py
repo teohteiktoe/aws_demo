@@ -1,18 +1,14 @@
-#from textblob import TextBlob
-from flask import Flask
-
+from flask import Flask, request, render_template
 application = Flask(__name__)
-from flask import render_template,request
 
-@application.route("/", methods=["GET", "POST"])
-def index():
-    if request.method == "POST":
-        q = request.form.get("q")
-        print(q)
-        #r = TextBlob(q).sentiment
-        return(render_template("index.html", r=q))
+@application.route("/", methods=["GET","POST"])
+def index():    
+    if request.method == "POST":        
+        r = float(request.form.get("rate"))
+        return(render_template("index.html",result=r*(-50.6)+90.2))    
     else:
-        return(render_template("index.html", result="waiting"))
+        return(render_template("index.html",result="waiting.........."))
 
-if __name__=="__main__":
+if __name__ == "__main__":    
     application.run()
+
